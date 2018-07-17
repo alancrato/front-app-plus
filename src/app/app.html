@@ -1,0 +1,20 @@
+<ion-menu [content]="content">
+
+  <ion-header class="logo-app">
+    <img src="assets/imgs/logo.png"/>
+        <div class="user">Aqui é legal demais!</div>
+    <br/>
+  </ion-header>
+
+  <ion-content>
+    <ion-list class="list-app">
+      <button ion-item *ngFor="let p of pages" (click)="openPage(p)" color="dark">
+        <ion-icon [name]="p.icon" item-left></ion-icon>
+        {{p.title}}
+      </button>
+    </ion-list>
+  </ion-content>
+
+</ion-menu>
+
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

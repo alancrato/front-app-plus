@@ -1,0 +1,116 @@
+// http://ionicframework.com/docs/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+ion-app{
+  ion-menu{
+    ion-content{
+      background-color: map_get($colors, dark) !important;
+      color: map_get($colors, ligth) !important;
+    }
+  }
+
+  .logo-app{
+    background-color: #6a1b9a;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+  }
+
+  .user{
+    color: white;
+    padding: 0 5%;
+  }
+
+  .email{
+    color: white;
+    padding: 0 5%;
+  }
+
+  .toolbar-background{
+    background-color: transparent;
+    color: white;
+  }
+
+  ion-item{
+    background-color: transparent;
+    color: white;
+  }
+
+  .logo-app img{
+    width: 60%;
+    margin-top: 5%;
+  }
+
+  .item-dark, .item-divider-dark {
+    color: #fff;
+    background-color: #1f1e1e;
+  }
+
+  .list-app{
+    margin: 5% 0 0 0;
+  }
+
+  .list .item-block .item-inner {
+    border-bottom: 0 solid transparent;
+    border: 0;
+  }
+
+  .item {
+    font-size: 1em;
+    font-weight: 200;
+  }
+
+  .item > ion-icon, .item-inner > ion-icon {
+    min-height: 1.1em;
+    font-size: 1.6em;
+    line-height: 1;
+    font-weight: 100;
+  }
+
+  .item [item-left], .item [item-right], .item [item-start], .item [item-end] {
+    margin: 9px 0 0 0;
+  }
+
+  .item-ios [item-left], .item [item-right], .item [item-start], .item [item-end] {
+    margin: 9px 15px 4px 0;
+  }
+
+  .list-ios > .item-block:first-child {
+    border-top: 0 solid transparent;
+  }
+
+  .list-ios > .item-block:last-child, .list-ios > .item-wrapper:last-child .item-block {
+    border-top: 0 solid transparent;
+  }
+
+  .item-ios[detail-push] .item-inner, button.item-ios:not([detail-none]) .item-inner, a.item-ios:not([detail-none]) .item-inner {
+    background-image: inherit !important;
+  }
+
+  .list-ios > .item-block:last-child, .list-ios > .item-wrapper:last-child .item-block {
+    border-bottom: 0 solid transparent;
+  }
+
+}
+
+.toast-login-error{
+  .toast-container{
+    background-color: map_get($colors, light) !important;
+    .toast-message{
+      color: map_get($colors, dark) !important;
+    }
+  }
+}
