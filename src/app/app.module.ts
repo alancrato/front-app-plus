@@ -5,7 +5,7 @@ import { MyApp } from './app.component';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import {Http, HttpModule, XHRBackend} from "@angular/http";
+import { Http, HttpModule, XHRBackend } from "@angular/http";
 import { JwtClientProvider } from '../providers/jwt-client';
 import { IonicStorageModule, Storage } from "@ionic/storage";
 import { AuthConfig, AuthHttp, JwtHelper } from "angular2-jwt";

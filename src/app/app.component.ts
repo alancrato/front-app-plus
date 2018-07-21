@@ -13,7 +13,7 @@ import { Redirector } from "../providers/redirector";
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: string = 'SlidesPage';
+  rootPage: string = 'HomePage';
   pages: Array<{title: string, component: string, icon: any}>;
   user:any;
 
@@ -28,7 +28,7 @@ export class MyApp {
     this.initializeApp();
     // set our app's pages
     this.pages = [
-      { title: 'Início', component: 'SlidesPage', icon: 'home'},
+      { title: 'Início', component: 'HomePage', icon: 'home'},
       { title: 'Estações', component: 'StatesPage', icon: 'radio' },
       { title: 'Sobre', component: 'AboutPage', icon: 'document' },
       { title: 'Promoções', component: 'PromotionsPage', icon: 'calendar' },
