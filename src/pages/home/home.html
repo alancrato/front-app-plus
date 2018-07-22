@@ -19,7 +19,7 @@
             <img [src]="slide.card_inactive" class="slide-image"/>
 
             <!--<div class="card-title">
-              {{slide.page}}
+              {{slide.id}}
             </div>-->
 
             <!--<div class="card-title">
@@ -32,13 +32,13 @@
               </div>
             </div>-->
 
-           <!--<div *ngIf="slide.page == 'HomePage'; then thenBlock else elseBlock"></div>
+           <div *ngIf="slide.id == 2; then thenBlock else elseBlock"></div>
             <ng-template #thenBlock>
               <div class="card-title active">Ouvindo</div>
             </ng-template>
             <ng-template #elseBlock>
               <div class="card-title inactive">Ouvir</div>
-            </ng-template>-->
+            </ng-template>
 
           </div>
           <!--<div class="card-title">
