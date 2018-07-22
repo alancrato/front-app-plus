@@ -58,14 +58,21 @@ page-home {
   }
 
   .card-title{
-    color: #57a9a7;
     background-color: white;
     position: absolute;
-    margin: -28% -60%;
+    margin: -25% -60%;
     font-size: 0.6em;
     line-height: 2em;
     border-radius: 15px;
     width: 20%;
+  }
+
+  .active{
+    color: #57a9a7;
+  }
+
+  .inactive{
+    color: #ea5d65;
   }
 
   .swiper-pagination-bullet {

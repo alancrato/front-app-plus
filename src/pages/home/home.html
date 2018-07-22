@@ -13,10 +13,37 @@
 <ion-content>
   <ion-row>
     <ion-col col-12 text-center>
-      <ion-slides pager pager autoplay="4000" loop="true" speed="1000">
+      <ion-slides pager autoplay="4000" loop="true" speed="1000">
         <ion-slide *ngFor="let slide of slides">
-          <img [src]="slide.image" class="slide-image" (click)="loadPage(slide.page)"/>
-          <div class="card-title">Ouvindo</div>
+          <div (click)="loadPage(slide.page)">
+            <img [src]="slide.image" class="slide-image"/>
+
+            <!--<div class="card-title">
+              {{slide.page}}
+            </div>-->
+
+            <!--<div class="card-title">
+              {{slide.title == 'rede' ? 'hide' : 'show'}}
+            </div>-->
+
+            <!--<div *ngIf="slide.title == 'Publicidade'">
+              <div class="card-title">
+                Publicidade
+              </div>
+            </div>-->
+
+           <!--<div *ngIf="slide.page == 'HomePage'; then thenBlock else elseBlock"></div>
+            <ng-template #thenBlock>
+              <div class="card-title active">Ouvindo</div>
+            </ng-template>
+            <ng-template #elseBlock>
+              <div class="card-title inactive">Ouvir</div>
+            </ng-template>-->
+
+          </div>
+          <div class="card-title">
+            {{slide.title}}
+          </div>
         </ion-slide>
       </ion-slides>
     </ion-col>

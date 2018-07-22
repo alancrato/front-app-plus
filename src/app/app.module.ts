@@ -13,6 +13,7 @@ import { AuthProvider } from '../providers/auth';
 import { ENV } from "../models/env";
 import { DefaultXHRBackend } from '../providers/defalt-xhr-backend';
 import { Redirector } from '../providers/redirector';
+import { Service } from "../providers/service";
 
 declare var ENV:ENV;
 
@@ -39,6 +40,7 @@ declare var ENV:ENV;
     JwtClientProvider,
     AuthProvider,
     Redirector,
+    Service,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     {
       provide: AuthHttp,

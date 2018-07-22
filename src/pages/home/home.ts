@@ -15,28 +15,22 @@ export class HomePage {
 
   slides = [
     {
-      title: "",
+      title: "HomePage",
       description: "",
-      image: "assets/imgs/01_card.png",
+      image: "assets/imgs/slides/01_card.png",
+      page: 'HomePage'
+    },
+    {
+      title: "Aracati",
+      description: "",
+      image: "assets/imgs/slides/02_card.png",
       page: 'StatesPage'
     },
     {
-      title: "",
+      title: "Cariri",
       description: "",
-      image: "assets/imgs/02_card.png",
+      image: "assets/imgs/slides/03_card.png",
       page: 'AboutPage'
-    },
-    {
-      title: "",
-      description: "",
-      image: "assets/imgs/03_card.png",
-      page: 'PromotionsPage'
-    },
-    {
-      title: "",
-      description: "",
-      image: "assets/imgs/04_card.png",
-      page: 'DropsPage'
     }
   ];
 

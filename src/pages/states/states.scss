@@ -10,12 +10,22 @@ page-states {
     background-color: black !important;
   }
 
+  .bar-button-default, .bar-button-clear-default, .bar-button-default {
+    color: white;
+    background-color: transparent;
+  }
+
+  .back-button-text-ios {
+    letter-spacing: -.01em;
+    display: none;
+  }
+
   .top{
     margin-top: 5%;
   }
 
   .set{
-    margin-top: -4%;
+    margin-top: -8%;
   }
 
   .header::after, .tabs[tabsPlacement="top"] > .tabbar::after, .footer::before, .tabs[tabsPlacement="bottom"] > .tabbar::before {
@@ -34,7 +44,7 @@ page-states {
 
   .line-bottom{
     border-bottom: 1px solid whitesmoke;
-    margin-top: 5%;
+    margin-top: 4%;
   }
 
   .state{
@@ -65,7 +75,7 @@ page-states {
   }
 
   .divider-states{
-    margin-top: 5%;
+    margin-top: 4%;
   }
 
 }
