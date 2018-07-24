@@ -15,24 +15,27 @@
     <ion-col col-12 text-center>
       <ion-slides pager>
         <ion-slide *ngFor="let slide of slides">
+          <div *ngIf="slide.id == 1; then thenBlock else elseBlock"></div>
+          <ng-template #thenBlock>
+            <img [src]="slide.card_active" class="slide-image" (click)="slidesChanged()"/>
+          </ng-template>
+          <ng-template #elseBlock>
+            <img [src]="slide.card_inactive" class="slide-image" (click)="slidesChanged()"/>
+          </ng-template>
+
+          <!--  <div class="card-title active">{{slide.id -1}}</div>
           <div (click)="loadPage(slide.page)">
             <img [src]="slide.card_inactive" class="slide-image"/>
 
-            <!--<div class="card-title">
-              {{slide.id}}
-            </div>-->
+            <div *ngIf="slide.frequency == pub; then thenBlock else elseBlock"></div>
+            <ng-template #thenBlock>
+              <div class="card-title active"></div>
+            </ng-template>
+            <ng-template #elseBlock>
+              <div class="card-title inactive">Ouvirir</div>
+            </ng-template>-->
 
-            <!--<div class="card-title">
-              {{slide.title == 'rede' ? 'hide' : 'show'}}
-            </div>-->
-
-            <!--<div *ngIf="slide.title == 'Publicidade'">
-              <div class="card-title">
-                Publicidade
-              </div>
-            </div>-->
-
-           <div *ngIf="slide.id == 2; then thenBlock else elseBlock"></div>
+           <!--<div *ngIf="slide.id == 2; then thenBlock else elseBlock"></div>
             <ng-template #thenBlock>
               <div class="card-title active">Ouvindo</div>
             </ng-template>
@@ -40,11 +43,8 @@
               <div class="card-title inactive">Ouvir</div>
             </ng-template>
 
-          </div>
-          <!--<div class="card-title">
-            {{slide.title}}
-          </div>-->
 
+          </div>-->
         </ion-slide>
       </ion-slides>
     </ion-col>
