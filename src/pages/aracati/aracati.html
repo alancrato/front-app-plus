@@ -1,12 +1,83 @@
+
 <ion-header>
-
-  <ion-navbar>
-    <ion-title>aracati</ion-title>
-  </ion-navbar>
-
+  <ion-row text-center class="top">
+    <ion-col col-12>
+      <img src="assets/imgs/marca_expand.png"/>
+    </ion-col>
+    <ion-col col-12 class="set">
+      <img src="assets/imgs/ic_expand.png"/>
+    </ion-col>
+  </ion-row>
 </ion-header>
 
-
-<ion-content padding>
-
+<ion-content>
+  <ion-row>
+    <ion-col col-12 text-center>
+      <ion-slides pager>
+        <ion-slide *ngFor="let slide of slides">
+          <div *ngIf="slide.id == 2; then thenBlock else elseBlock"></div>
+          <ng-template #thenBlock>
+            <img [src]="slide.card_active" class="slide-image" (click)="loadPage(slide.page)"/>
+          </ng-template>
+          <ng-template #elseBlock>
+            <img [src]="slide.card_inactive" class="slide-image" (click)="loadPage(slide.page)"/>
+          </ng-template>
+        </ion-slide>
+      </ion-slides>
+    </ion-col>
+  </ion-row>
+  <ion-row class="player" text-center>
+    <ion-col col-2 class="ic ic-face">
+      <img src="assets/imgs/ic_facebook.png"/>
+    </ion-col>
+    <ion-col col-2 class="ic">
+      <img src="assets/imgs/ic_instagram.png"/>
+    </ion-col>
+    <ion-col col-4 class="pl">
+      <img src="assets/imgs/pause.png"/>
+    </ion-col>
+    <ion-col col-2 class="ic">
+      <img src="assets/imgs/ic_whatsapp.png"/>
+    </ion-col>
+    <ion-col col-2 class="ic">
+      <img src="assets/imgs/ic_email.png"/>
+    </ion-col>
+  </ion-row>
 </ion-content>
+
+<ion-footer>
+  <ion-row text-center class="title-footer">
+    <ion-col col-3 (click)=loadStates()>
+      <div class="img-live">
+        <img src="assets/imgs/button_player_des.png"/>
+      </div>
+      <div class="live">
+        Ao Vivo
+      </div>
+    </ion-col>
+    <ion-col col-3 class="float-footer" (click)=loadAbout()>
+      <div class="img-about">
+        <img src="assets/imgs/about_des.png"/>
+      </div>
+      <div class="about">
+        Sobre
+      </div>
+    </ion-col>
+    <ion-col col-3 (click)=loadPromo()>
+      <div class="img-promo">
+        <img src="assets/imgs/button_pro_des.png"/>
+      </div>
+      <div class="promo">
+        Promoções
+      </div>
+    </ion-col>
+    <ion-col col-3 (click)=loadDrops()>
+      <div class="img-drops">
+        <img src="assets/imgs/button_drops.png"/>
+      </div>
+      <div class="drops">
+        Drops
+      </div>
+    </ion-col>
+  </ion-row>
+</ion-footer>

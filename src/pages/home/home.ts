@@ -1,11 +1,11 @@
-import {Component, Injectable, ViewChild } from '@angular/core';
-import {IonicPage, NavController, NavParams, Slides } from 'ionic-angular';
+import { Component, Injectable, ViewChild } from '@angular/core';
+import { IonicPage, NavController, NavParams, Slides } from 'ionic-angular';
 import { Service } from "../../providers/service";
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html',
-  providers:[Service]
+  providers: [Service]
 })
 
 @IonicPage()
@@ -33,44 +33,12 @@ export class HomePage {
     this.getCat();
   }
 
-
-  slidesChanged() {
-    let index = this.sld.getActiveIndex();
-    //let currentIndex = this.sld.activeIndex = 4;
-    //let currentIndex = this.sld.activeIndex() = 4;
-    //let currentIndex = this.sld.activeIndex(4);
-    let currentIndex = this.sld.slideTo(4);
-    console.log(index);
-    console.log(currentIndex);
-  }
-
   ionViewDidLoad(){
-    let currentIndex = this.sld.getActiveIndex();
-    console.log("Current index is", currentIndex);
     setTimeout(() => {
-      this.sld.slideTo(2);
+      this.sld.slideTo(0);
     }, 500);
   }
 
-  ionViewWillEnter(){
-    this.sld.slideTo(2);
-  }
-
-  ionViewDidEnter(){
-    this.sld.slideTo(2);
-  }
-
-  ionViewWillLeave(){
-    this.sld.slideTo(2);
-  }
-
-  ionViewDidLeave(){
-    this.sld.slideTo(2);
-  }
-
-  ionViewWillUnload(){
-    this.sld.slideTo(5);
-  }
 
   loadPage(page){
     this.navCtrl.setRoot(page);
