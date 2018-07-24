@@ -15,13 +15,13 @@
     <ion-col col-12 text-center>
       <ion-slides pager>
         <ion-slide *ngFor="let slide of slides">
-            <div *ngIf="slide.id == 1; then thenBlock else elseBlock"></div>
-            <ng-template #thenBlock>
-              <img [src]="slide.card_active" class="slide-image" (click)="loadPage(slide.page)"/>
-            </ng-template>
-            <ng-template #elseBlock>
-              <img [src]="slide.card_inactive" class="slide-image" (click)="loadPage(slide.page)"/>
-            </ng-template>
+          <div *ngIf="slide.id == 3; then thenBlock else elseBlock"></div>
+          <ng-template #thenBlock>
+            <img [src]="slide.card_active" class="slide-image" (click)="loadPage(slide.page)"/>
+          </ng-template>
+          <ng-template #elseBlock>
+            <img [src]="slide.card_inactive" class="slide-image" (click)="loadPage(slide.page)"/>
+          </ng-template>
         </ion-slide>
       </ion-slides>
     </ion-col>
