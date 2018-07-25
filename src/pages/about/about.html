@@ -49,7 +49,7 @@
   </div>
 
   <div *ngFor="let ct of cat">
-    <div *ngIf="ct.status == 'active'">
+    <div *ngIf="ct.status == 'active' && ct.name !== 'Publicidade'">
       <ion-item>
         <div class="title-state">
           {{ct.name}} {{ct.frequency}}

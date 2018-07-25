@@ -18,7 +18,7 @@
 
 <ion-content padding>
   <div *ngFor="let ct of cat">
-    <div *ngIf="ct.status == 'active'">
+    <div *ngIf="ct.status == 'active' && ct.name !== 'Publicidade'">
       <ion-row class="states">
         <ion-col col-3>
           <img [src]="ct.icon"/>

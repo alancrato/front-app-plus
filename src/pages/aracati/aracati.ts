@@ -35,13 +35,25 @@ export class AracatiPage {
 
   ionViewDidLoad(){
     setTimeout(() => {
-      this.sld.slideTo(2);
+      let index = this.sld.getPreviousIndex();
+      console.log(index);
+      this.sld.slideTo(index +1);
+    }, 500);
+  }
+
+  ionViewWillEnter(){
+    setTimeout(() => {
+      let index = this.sld.getPreviousIndex();
+      console.log(index);
+      this.sld.slideTo(index);
     }, 500);
   }
 
   ionViewDidEnter(){
     setTimeout(() => {
-      this.sld.slideTo(1);
+      let index = this.sld.getPreviousIndex();
+      console.log(index);
+      this.sld.slideTo(index);
     }, 500);
   }
 

@@ -3,15 +3,15 @@ import { IonicPage, NavController, NavParams, Slides } from 'ionic-angular';
 import { Service } from "../../providers/service";
 
 @Component({
-  selector: 'page-cariri',
-  templateUrl: 'cariri.html',
+  selector: 'page-paraipaba',
+  templateUrl: 'paraipaba.html',
   providers: [Service]
 })
 
 @IonicPage()
 @Injectable()
 
-export class CaririPage {
+export class ParaipabaPage {
   @ViewChild(Slides) sld: Slides;
 
   slides:any[];
@@ -37,7 +37,7 @@ export class CaririPage {
     setTimeout(() => {
       let index = this.sld.getPreviousIndex();
       console.log(index);
-      this.sld.slideTo(index +2);
+      this.sld.slideTo(index +8);
     }, 500);
   }
 
@@ -76,5 +76,4 @@ export class CaririPage {
   loadDrops(){
     this.navCtrl.push('DropsPage');
   }
-
 }

@@ -1,17 +1,17 @@
 import { Component, Injectable, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams, Slides } from 'ionic-angular';
-import { Service } from "../../providers/service";
+import { Service} from "../../providers/service";
 
 @Component({
-  selector: 'page-cariri',
-  templateUrl: 'cariri.html',
+  selector: 'page-sobral',
+  templateUrl: 'sobral.html',
   providers: [Service]
 })
 
 @IonicPage()
 @Injectable()
 
-export class CaririPage {
+export class SobralPage {
   @ViewChild(Slides) sld: Slides;
 
   slides:any[];
@@ -37,7 +37,7 @@ export class CaririPage {
     setTimeout(() => {
       let index = this.sld.getPreviousIndex();
       console.log(index);
-      this.sld.slideTo(index +2);
+      this.sld.slideTo(index +10);
     }, 500);
   }
 

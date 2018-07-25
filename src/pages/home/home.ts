@@ -35,7 +35,17 @@ export class HomePage {
 
   ionViewDidLoad(){
     setTimeout(() => {
-      this.sld.slideTo(0);
+      let index = this.sld.getPreviousIndex();
+      console.log(index);
+      this.sld.slideTo(index);
+    }, 500);
+  }
+
+  ionViewDidEnter(){
+    setTimeout(() => {
+      let index = this.sld.getPreviousIndex();
+      console.log(index);
+      this.sld.slideTo(index);
     }, 500);
   }
 

@@ -15,7 +15,7 @@
     <ion-col col-12 text-center>
       <ion-slides pager>
         <ion-slide *ngFor="let slide of slides">
-          <div *ngIf="slide.page == 'CaririPage'; then thenBlock else elseBlock"></div>
+          <div *ngIf="slide.page == 'SantaquiteriaPage'; then thenBlock else elseBlock"></div>
           <ng-template #thenBlock>
             <img [src]="slide.card_active" class="slide-image" (click)="loadPage(slide.page)"/>
           </ng-template>
