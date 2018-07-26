@@ -27,4 +27,11 @@ export class Service{
                 return result.json();
             });
     }
+
+    getProgramations(){
+        return this.http.get(ENV.API_URL + `/promotions`)
+            .map(result => {
+                return result.json();
+            })
+    }
 }

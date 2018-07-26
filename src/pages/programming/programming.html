@@ -21,9 +21,9 @@
 
   <ion-row>
     <ion-col col-12 text-center>
-      <ion-slides pager autoplay="4000" loop="true" speed="1000">
-        <ion-slide *ngFor="let slide of slides" class="slide-image">
-          <img [src]="slide.image"/>
+      <ion-slides pager>
+        <ion-slide *ngFor="let pro of program" class="slide-image">
+          <img [src]="pro.card"/>
         </ion-slide>
       </ion-slides>
     </ion-col>

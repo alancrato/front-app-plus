@@ -1,46 +1,34 @@
-import { Component } from '@angular/core';
+import { Component, Injectable } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the ProgrammingPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { Service } from "../../providers/service";
 
 @IonicPage()
+@Injectable()
+
 @Component({
   selector: 'page-programming',
   templateUrl: 'programming.html',
+  providers: [Service]
 })
 export class ProgrammingPage {
 
+  program:any;
+
   constructor(
       public navCtrl: NavController,
-      public navParams: NavParams
+      public navParams: NavParams,
+      private service: Service
   ) {}
 
-  slides = [
-    {
-      title: "",
-      description: "",
-      image: "assets/imgs/prog/programa01.png",
-    },
-    {
-      title: "",
-      description: "",
-      image: "assets/imgs/prog/programa02.png",
-    },
-    {
-      title: "",
-      description: "",
-      image: "assets/imgs/prog/programa03.png",
-    },
-    {
-      title: "",
-      description: "",
-      image: "assets/imgs/prog/programa04.png",
-    }
-  ];
+  ngOnInit(){
+    this.getProm();
+  }
+
+  getProm(){
+    this.service.getProgramations()
+        .subscribe(result => {
+          this.program = result;
+        });
+  }
 
 }

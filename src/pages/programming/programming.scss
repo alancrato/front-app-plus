@@ -72,4 +72,15 @@ page-programming {
     width: 80%;
   }
 
+  .swiper-pagination-fraction, .swiper-pagination-custom, .swiper-container-horizontal > .swiper-pagination-bullets {
+    bottom: 8px;
+  }
+
+ .swiper-pagination-bullet {
+    width: 8px;
+    height: 3px;
+   background: white;
+  }
+
+
 }
