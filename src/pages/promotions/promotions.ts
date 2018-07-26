@@ -1,15 +1,16 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Component, Injectable } from '@angular/core';
+import { IonicPage, NavParams } from 'ionic-angular';
 
 @IonicPage()
+@Injectable()
+
 @Component({
   selector: 'page-promotions',
-  templateUrl: 'promotions.html',
+  templateUrl: 'promotions.html'
 })
-export class PromotionsPage {
+export class PromotionsPage{
 
   constructor(
-      public navCtrl: NavController,
       public navParams: NavParams
   ) {}
 

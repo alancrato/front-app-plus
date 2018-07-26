@@ -1,6 +1,8 @@
 import { Component, Injectable, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams, Slides } from 'ionic-angular';
 import { Service } from "../../providers/service";
+import { PostsPage } from "../wordpress/posts/posts";
+import { PromotionalPage } from "../wordpress/promotional/promotional";
 
 @Component({
   selector: 'page-home',
@@ -63,11 +65,11 @@ export class HomePage {
   }
 
   loadPromo(){
-    this.navCtrl.push('PromotionsPage');
+    this.navCtrl.push(PromotionalPage);
   }
 
   loadDrops(){
-    this.navCtrl.push('DropsPage');
+    this.navCtrl.push(PostsPage);
   }
 
 }

@@ -7,6 +7,10 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { AuthProvider } from "../providers/auth";
 import { Redirector } from "../providers/redirector";
 
+import { PostsPage } from "../pages/wordpress/posts/posts";
+import { Favorites } from "../pages/wordpress/favorites/favorites";
+import { PromotionalPage } from "../pages/wordpress/promotional/promotional";
+
 @Component({
   templateUrl: 'app.html'
 })
@@ -14,7 +18,7 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   rootPage: string = 'HomePage';
-  pages: Array<{title: string, component: string, icon: any}>;
+  pages: Array<{title: string, component: any, icon: any}>;
   user:any;
 
   constructor(
@@ -31,9 +35,10 @@ export class MyApp {
       { title: 'Início', component: 'HomePage', icon: 'home'},
       { title: 'Estações', component: 'StatesPage', icon: 'radio' },
       { title: 'Sobre', component: 'AboutPage', icon: 'document' },
-      { title: 'Promoções', component: 'PromotionsPage', icon: 'calendar' },
-      { title: 'Drops da Plus', component: 'DropsPage', icon: 'paper' },
+      { title: 'Promoções', component: PromotionalPage, icon: 'calendar' },
+      { title: 'Drops da Plus', component: PostsPage, icon: 'paper' },
       { title: 'Programação', component: 'ProgrammingPage', icon: 'reorder' },
+      { title: 'Favorites', component: Favorites, icon: 'bookmark' },
       { title: 'Login', component: 'LoginPage', icon: 'person' },
       { title: 'Criar Conta', component: 'AccountPage', icon: 'person-add' }
     ];

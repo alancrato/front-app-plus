@@ -1,6 +1,7 @@
 import { Component, Injectable, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams, Slides } from 'ionic-angular';
 import { Service } from "../../providers/service";
+import { PostsPage } from "../wordpress/posts/posts";
 
 @Component({
   selector: 'page-aracati',
@@ -74,7 +75,7 @@ export class AracatiPage {
   }
 
   loadDrops(){
-    this.navCtrl.push('DropsPage');
+    this.navCtrl.push(PostsPage);
   }
 
 }

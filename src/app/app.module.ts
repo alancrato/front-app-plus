@@ -14,8 +14,10 @@ import { ENV } from "../models/env";
 import { DefaultXHRBackend } from '../providers/defalt-xhr-backend';
 import { Redirector } from '../providers/redirector';
 import { Service } from "../providers/service";
+import { PipeModule } from "./pipes/pipe.module";
+import { WpModule } from "../pages/wordpress/wp.module";
 
-declare var ENV:ENV;
+declare let ENV:ENV;
 
 @NgModule({
   declarations: [
@@ -24,6 +26,8 @@ declare var ENV:ENV;
   imports: [
     HttpModule,
     BrowserModule,
+    PipeModule,
+    WpModule,
     IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot({
       driverOrder: ['localstorage']

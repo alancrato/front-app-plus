@@ -1,0 +1,77 @@
+<ion-header>
+  <ion-navbar>
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>
+          {{post.cartola}}
+        </ion-title>
+        <ion-buttons end>
+            <button ion-button icon-only>
+              <ion-icon name="share"></ion-icon>
+            </button>
+        </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <div *ngIf="post">
+
+    <media *ngIf="post.featured_media" [id]="post.featured_media"></media>
+
+    <div class="content-about" *ngIf="post.content.rendered">
+      <div [innerHtml]="post.content.rendered | keepHtml"></div>
+    </div>
+
+  </div>
+
+    <ion-card *ngIf="post">
+
+      <div class="title">
+        <p [innerHtml]="post.title.rendered"></p>
+      </div>
+
+      <div class="bigode-post">
+        <p [innerHtml]="post.bigode"></p>
+      </div>
+
+      <media *ngIf="post.featured_media" [id]="post.featured_media"></media>
+  
+      <ion-card-content>
+
+        <div class="foto-post" *ngIf="post.foto">
+            Foto: {{post.foto}}
+        </div>
+
+        <div class="date-post">
+          {{post.date | date: 'dd/MM/yyyy H:mm' }}
+        </div>
+        <div class="line"></div>
+        <br/>
+
+        <div class="post-content" *ngIf="post.content.rendered">
+          <p [innerHtml]="post.content.rendered | keepHtml"></p>
+        </div>
+        <br/>
+        
+      </ion-card-content>
+    </ion-card>
+
+  <div class="line"></div>
+
+  <ion-card>
+    <div class="pub">*Publicidade</div>
+    <img src="http://eitaceara.com.br/wp-content/uploads/anuncioHome.png"/>
+  </ion-card>
+  <br/>
+
+  <div class="line"></div>
+  <br/>
+
+  <div class="leia-tambem">
+      <ion-icon name='book'></ion-icon>
+      Leia Também:
+  </div>
+
+</ion-content>

@@ -1,0 +1,139 @@
+page-favorites {
+    .toolbar-background {
+      border-color: #b2b2b28f;
+      background: #060607;
+      border-bottom: 1px solid #ffbe40;
+    }
+  
+    .toolbar{
+      padding: 0;
+    }
+  
+    .bar-button-menutoggle {
+      margin: 0 6px;
+      padding: 0 10px;
+      color: #FF2B41;
+    }
+
+    .trash{
+        padding: 0 10px;
+    }
+  
+    .cartola-top{
+      font-size: 1.2em;
+      font-weight: 300;
+      color: white;
+    }
+  
+    .icon-radio{
+      float: right;
+      padding: 5px 20px;
+      color: #FF2B41;
+      font-size: 1.8em;
+    }
+  
+    .toolbar-title {
+        padding: 0 12px;
+        font-size: 1.2em;
+        font-weight: 400;
+    }
+  
+    .title-local{
+      color: #d43235;
+      font-size: 1.2em;
+      font-weight: 300;
+    }
+  
+    .subtitle-local{
+      font-size: 1em;
+      font-weight: 300;
+      color: #15031d;
+    }
+  
+    .strong{
+      color: #d43235;
+      font-size: 1.8em;
+      font-weight: 300;
+    }
+  
+    .center{
+      margin: 0 auto;
+      text-align: center;
+    }
+  
+    .bar-button-default, .bar-button-clear-default, .bar-button-default {
+      color: #FF2B41;
+    }
+  
+    ion-card{
+      box-shadow: 0 0 0 0 rgba(0, 0, 0, 0), 0 0 0 0 rgba(0, 0, 0, 0), 0 0 0 0 rgba(0, 0, 0, 0) !important;
+    }
+  
+    .title p{
+      font-size: 1.5em;
+      font-weight: 400;
+      margin: 0 0 2px;
+      line-height: 1.5;
+      margin: 0 !important;
+    }
+  
+    .card-content{
+      padding: 0;
+    }
+  
+    .post-content img{
+      width: 100% !important;
+      height: 100% !important;
+    }
+  
+    .post-content{
+      margin-top: -20px;
+    }
+  
+    .post-content p{
+      font-size: 1.1em;
+      font-weight: 300;
+    }
+  
+    .card p {
+      margin: 10px 0 0 0;  
+    }
+  
+    .leia-tambem{
+      font-weight: 300;
+      font-size: 1.1em;
+    }
+  
+    iframe{
+      width: 100%;
+    }
+  
+    .back-button-text-ios {
+      letter-spacing: -.00em;
+      color: transparent;
+    }
+  
+    .foto-post{
+      font-size: 1em;
+      font-weight: 300;
+      padding: 5px 0 0 0 !important;
+    }
+  
+    .date-post{
+      font-size: 1em;
+      font-weight: 300;
+      padding: 0 !important;
+    }
+
+    .button-outline {
+        border-width: 1px;
+        border-style: solid;
+        border-color: #ccc;
+        color: #FF2B41;
+        background-color: transparent;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+  
+  }
+  
