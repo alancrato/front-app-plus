@@ -20,7 +20,13 @@
               <img [src]="slide.card_active" class="slide-image" (click)="loadPage(slide.page)"/>
             </ng-template>
             <ng-template #elseBlock>
-              <img [src]="slide.card_inactive" class="slide-image" (click)="loadPage(slide.page)"/>
+              <div *ngIf="slide.stream == 'null'; then thenBlock else elseBlock"></div>
+                <ng-template #thenBlock>
+                  <img [src]="slide.card_inactive" class="slide-image" (click)="loadPushPage(slide.page)"/>
+                </ng-template>
+              <ng-template #elseBlock>
+                  <img [src]="slide.card_inactive" class="slide-image" (click)="loadPage(slide.page)"/>
+              </ng-template>
             </ng-template>
         </ion-slide>
       </ion-slides>

@@ -56,6 +56,10 @@ export class HomePage {
     this.navCtrl.setRoot(page);
   }
 
+  loadPushPage(page){
+    this.navCtrl.push(page);
+  }
+
   loadStates(){
     this.navCtrl.push('StatesPage');
   }
