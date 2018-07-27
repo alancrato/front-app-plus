@@ -16,12 +16,12 @@ export class PostsPage implements OnInit {
   pageCount: number;
   category: any;
   search: string;
-  hideSearchbar: boolean;
+  hide: boolean;
   favoritePosts: any;
 
   constructor(
       private navParams: NavParams,
-      private wordpressService: ServiceWp,
+      private service: ServiceWp,
       private navController: NavController,
       private loadingController: LoadingController,
       private toastController: ToastController,
@@ -30,10 +30,10 @@ export class PostsPage implements OnInit {
 
   ngOnInit(){
     this.category = this.navParams.get('category');
-    this.hideSearchbar = true;
+    this.hide = true;
     this.search = '';
     this.favoritePosts = [];
-    this.storage.get('wordpress.favorite')
+    this.storage.get('wp.favorite')
         .then(data => {
           if(data) {
             this.favoritePosts = JSON.parse(data);
@@ -51,7 +51,7 @@ export class PostsPage implements OnInit {
     });
 
     loader.present();
-    this.wordpressService.getPosts(query)
+    this.service.getPosts(query)
         .subscribe(result => {
           this.posts = result;
           loader.dismiss();
@@ -76,7 +76,7 @@ export class PostsPage implements OnInit {
     });
 
     loader.present();
-    this.wordpressService.getPosts(query)
+    this.service.getPosts(query)
         .subscribe(result => {
           infiniteScroll.complete();
           if(result.length < 1) {
@@ -107,7 +107,7 @@ export class PostsPage implements OnInit {
 
     if(newPost) {
       this.favoritePosts.push(post);
-      this.storage.set('wordpress.favorite', JSON.stringify(this.favoritePosts));
+      this.storage.set('wp.favorite', JSON.stringify(this.favoritePosts));
       message = "Esta postagem foi salva em favoritos";
     } else {
       message = "Esta postagem já está em favoritos";
@@ -121,8 +121,8 @@ export class PostsPage implements OnInit {
     toast.present();
   }
 
-  toggleSearchbar() {
-    this.hideSearchbar = !this.hideSearchbar;
+  toggleSearch() {
+    this.hide = !this.hide;
   }
 
   createQuery() {

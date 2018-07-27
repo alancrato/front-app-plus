@@ -8,16 +8,17 @@ import { ServiceWp } from "../service/service.wp";
 
 @Component({
 	templateUrl: './categories.html',
-	providers: [ ServiceWp ]
+	providers: [ServiceWp]
 })
+
 export class Categories implements OnInit {
 
 	categories: any;
 
 	constructor(
-		private wordpressService: ServiceWp,
-		private navController: NavController,
-		private loadingController: LoadingController
+		private service: ServiceWp,
+		private nav: NavController,
+		private loading: LoadingController
 	) {}
 
 	ngOnInit() {
@@ -25,12 +26,12 @@ export class Categories implements OnInit {
 	}
 
 	getCategories() {
-		let loader = this.loadingController.create({
+		let loader = this.loading.create({
 			content: ""
 		});
 		loader.present();
 
-		this.wordpressService.getCategories()
+		this.service.getCategories()
 		.subscribe(result => {
 			this.categories = result;
 			loader.dismiss();
@@ -38,7 +39,7 @@ export class Categories implements OnInit {
 	}
 
 	loadCategory(category) {
-		this.navController.push(PostsPage, {
+		this.nav.push(PostsPage, {
 			category: category
 		});
 	}

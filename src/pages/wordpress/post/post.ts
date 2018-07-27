@@ -6,7 +6,7 @@ import { ServiceWp } from "../service/service.wp";
 @Component({
   selector: 'page-post',
   templateUrl: 'post.html',
-  providers: [ ServiceWp ]
+  providers: [ServiceWp]
 })
 export class PostPage {
 
@@ -16,8 +16,8 @@ export class PostPage {
 
       constructor(
           private navParams: NavParams,
-          private wordpressService: ServiceWp,
-          private loadingController: LoadingController
+          private service: ServiceWp,
+          private loading: LoadingController
       ) {
         let nav = this.navParams;
         if (nav.get('post')) {
@@ -29,12 +29,12 @@ export class PostPage {
       }
 
       getPost(id) {
-        let loader = this.loadingController.create({
-            content: "Please wait"
+        let loader = this.loading.create({
+            content: ""
         });
 
         loader.present();
-        this.wordpressService.getPost(id)
+        this.service.getPost(id)
             .subscribe(result => {
               this.post = result;
               this.authorData = this.post["_embedded"].author[0];
@@ -44,6 +44,5 @@ export class PostPage {
               loader.dismiss();
             });
       }
-
 
 }

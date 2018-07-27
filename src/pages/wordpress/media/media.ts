@@ -8,13 +8,14 @@ import { ServiceWp } from "../service/service.wp";
     templateUrl: './media.html',
     providers: [ServiceWp]
 })
+
 export class Media implements OnInit {
     @Input() id: number;
 
     media: any;
 
     constructor(
-        private wordpressService: ServiceWp
+        private service: ServiceWp
     ) {}
 
     ngOnInit() {
@@ -24,7 +25,7 @@ export class Media implements OnInit {
     }
 
     getMedia(id) {
-        this.wordpressService.getMedia(id)
+        this.service.getMedia(id)
             .subscribe(result => {
                 this.media = result;
             });

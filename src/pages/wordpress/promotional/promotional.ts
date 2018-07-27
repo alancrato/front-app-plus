@@ -8,7 +8,7 @@ import { ServiceWp } from "../service/service.wp";
 @Component({
     selector: 'page-promotional',
     templateUrl: 'promotional.html',
-    providers:[ ServiceWp ]
+    providers:[ServiceWp]
 })
 export class PromotionalPage implements OnInit {
 
@@ -16,12 +16,12 @@ export class PromotionalPage implements OnInit {
     pageCount: number;
     category: any;
     search: string;
-    hideSearchbar: boolean;
+    hide: boolean;
     favoritePosts: any;
 
     constructor(
         private navParams: NavParams,
-        private wordpressService: ServiceWp,
+        private service: ServiceWp,
         private navController: NavController,
         private loadingController: LoadingController,
         private toastController: ToastController,
@@ -30,7 +30,7 @@ export class PromotionalPage implements OnInit {
 
     ngOnInit(){
         this.category = this.navParams.get('category');
-        this.hideSearchbar = true;
+        this.hide = true;
         this.search = '';
         this.favoritePosts = [];
         this.storage.get('wordpress.favorite')
@@ -51,7 +51,7 @@ export class PromotionalPage implements OnInit {
         });
 
         loader.present();
-        this.wordpressService.getCatsA(query)
+        this.service.getCatsA(query)
             .subscribe(result => {
                 this.posts = result;
                 loader.dismiss();
@@ -76,7 +76,7 @@ export class PromotionalPage implements OnInit {
         });
 
         loader.present();
-        this.wordpressService.getPosts(query)
+        this.service.getPosts(query)
             .subscribe(result => {
                 infiniteScroll.complete();
                 if(result.length < 1) {
@@ -121,8 +121,8 @@ export class PromotionalPage implements OnInit {
         toast.present();
     }
 
-    toggleSearchbar() {
-        this.hideSearchbar = !this.hideSearchbar;
+    toggleSearch() {
+        this.hide = !this.hide;
     }
 
     createQuery() {

@@ -13,11 +13,11 @@ export class Favorites {
 
 	category: any;
 	search: string;
-	hideSearchbar: boolean = true;
+	hide: boolean = true;
 	favoritePosts = [];
 
 	constructor(
-		private navController: NavController,
+		private nav: NavController,
 		private storage: Storage) {}
 
     ionViewWillEnter() {
@@ -25,7 +25,7 @@ export class Favorites {
     }
 
 	getPosts() {
-	    this.storage.get('wordpress.favorite')
+	    this.storage.get('wp.favorite')
 	    .then(data => {
 	        if(data) {
 	        	this.favoritePosts = JSON.parse(data);
@@ -34,7 +34,7 @@ export class Favorites {
 	}
 
 	loadPost(post) {
-		this.navController.push(PostPage, {
+		this.nav.push(PostPage, {
 			post: post
 		});
 	}
@@ -42,12 +42,12 @@ export class Favorites {
 	removeFavoritePost(post) {
 		const index = this.favoritePosts.findIndex(item => item.id === post.id);
 		this.favoritePosts.splice(index, 1);
-		this.storage.set('wordpress.favorite', JSON.stringify(this.favoritePosts)); 
+		this.storage.set('wp.favorite', JSON.stringify(this.favoritePosts));
 	}
 
 	removeAllFavoritePosts() {
 		this.favoritePosts = [];
-		this.storage.remove('wordpress.favorite');
+		this.storage.remove('wp.favorite');
 	}
 
 }
