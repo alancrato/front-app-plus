@@ -8,7 +8,7 @@ import { ServiceWp } from "../service/service.wp";
 @Component({
     selector: 'page-promotional',
     templateUrl: 'promotional.html',
-    providers:[ServiceWp]
+    providers:[ ServiceWp ]
 })
 export class PromotionalPage implements OnInit {
 
@@ -20,20 +20,20 @@ export class PromotionalPage implements OnInit {
     favoritePosts: any;
 
     constructor(
-        private navParams: NavParams,
+        private navP: NavParams,
         private service: ServiceWp,
-        private navController: NavController,
-        private loadingController: LoadingController,
-        private toastController: ToastController,
+        private navCtrl: NavController,
+        private loading: LoadingController,
+        private toast: ToastController,
         private storage: Storage
     ){}
 
     ngOnInit(){
-        this.category = this.navParams.get('category');
-        this.hide = true;
+        this.category = this.navP.get('category');
+        this.hider = true;
         this.search = '';
         this.favoritePosts = [];
-        this.storage.get('wordpress.favorite')
+        this.storage.get('wp.favorite')
             .then(data => {
                 if(data) {
                     this.favoritePosts = JSON.parse(data);
@@ -46,7 +46,7 @@ export class PromotionalPage implements OnInit {
         this.pageCount = 1;
 
         let query = this.createQuery();
-        let loader = this.loadingController.create({
+        let loader = this.loading.create({
             content: ""
         });
 
@@ -66,10 +66,10 @@ export class PromotionalPage implements OnInit {
         this.pageCount++;
 
         let query = this.createQuery();
-        let loader = this.loadingController.create({
+        let loader = this.loading.create({
             content: ""
         });
-        let toast = this.toastController.create({
+        let toast = this.toast.create({
             cssClass: 'toast-reverse',
             message: "Não há mais postagens.",
             duration: 3000
@@ -90,7 +90,7 @@ export class PromotionalPage implements OnInit {
     }
 
     loadPost(post) {
-        this.navController.push(PostPage, {
+        this.navCtrl.push(PostPage, {
             post: post
         });
     }
@@ -107,12 +107,12 @@ export class PromotionalPage implements OnInit {
 
         if(newPost) {
             this.favoritePosts.push(post);
-            this.storage.set('wordpress.favorite', JSON.stringify(this.favoritePosts));
+            this.storage.set('wp.favorite', JSON.stringify(this.favoritePosts));
             message = "Esta postagem foi salva em favoritos";
         } else {
             message = "Esta postagem já está em favoritos";
         }
-        let toast = this.toastController.create({
+        let toast = this.toast.create({
             cssClass: 'toast-reverse',
             message: message,
             duration: 3000,

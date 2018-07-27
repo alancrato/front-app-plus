@@ -8,7 +8,6 @@ import { ServiceWp } from "../service/service.wp";
     templateUrl: './media.html',
     providers: [ServiceWp]
 })
-
 export class Media implements OnInit {
     @Input() id: number;
 

@@ -2,14 +2,14 @@ import { Component, Injectable } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Service } from "../../providers/service";
 
+@IonicPage()
+@Injectable()
+
 @Component({
   selector: 'page-states',
   templateUrl: 'states.html',
   providers: [Service]
 })
-
-@IonicPage()
-@Injectable()
 
 export class StatesPage {
 

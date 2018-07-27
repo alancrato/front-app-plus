@@ -1,6 +1,6 @@
 import { Component, Injectable } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { Service } from "../../providers/service";
+import { Service } from "../../../providers/service";
 
 @IonicPage()
 @Injectable()
