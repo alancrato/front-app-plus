@@ -34,7 +34,12 @@
       <img src="assets/imgs/ic_instagram.png"/>
     </ion-col>
     <ion-col col-4 class="pl">
-      <img src="assets/imgs/pause.png"/>
+      <div *ngIf="player.plaY">
+        <img src="assets/imgs/play.png" (click)="play('http://198.24.156.115:9304/;')"/>
+      </div>
+      <div *ngIf="!player.plaY">
+        <img src="assets/imgs/pause.png" class="animated flip" (click)="pause()"/>
+      </div>
     </ion-col>
     <ion-col col-2 class="ic">
       <img src="assets/imgs/ic_whatsapp.png"/>

@@ -20,16 +20,16 @@ export class PromotionalPage implements OnInit {
     favoritePosts: any;
 
     constructor(
-        private navP: NavParams,
+        private navParams: NavParams,
         private service: ServiceWp,
-        private navC: NavController,
-        private loading: LoadingController,
-        private toast: ToastController,
+        private navController: NavController,
+        private loadingController: LoadingController,
+        private toastController: ToastController,
         private storage: Storage
     ){}
 
     ngOnInit(){
-        this.category = this.navP.get('category');
+        this.category = this.navParams.get('category');
         this.hide = true;
         this.search = '';
         this.favoritePosts = [];
@@ -46,7 +46,7 @@ export class PromotionalPage implements OnInit {
         this.pageCount = 1;
 
         let query = this.createQuery();
-        let loader = this.loading.create({
+        let loader = this.loadingController.create({
             content: ""
         });
 
@@ -66,10 +66,10 @@ export class PromotionalPage implements OnInit {
         this.pageCount++;
 
         let query = this.createQuery();
-        let loader = this.loading.create({
+        let loader = this.loadingController.create({
             content: ""
         });
-        let toast = this.toast.create({
+        let toast = this.toastController.create({
             cssClass: 'toast-reverse',
             message: "Não há mais postagens.",
             duration: 3000
@@ -90,7 +90,7 @@ export class PromotionalPage implements OnInit {
     }
 
     loadPost(post) {
-        this.navC.push(PostPage, {
+        this.navController.push(PostPage, {
             post: post
         });
     }
@@ -112,7 +112,7 @@ export class PromotionalPage implements OnInit {
         } else {
             message = "Esta postagem já está em favoritos";
         }
-        let toast = this.toast.create({
+        let toast = this.toastController.create({
             cssClass: 'toast-reverse',
             message: message,
             duration: 3000,

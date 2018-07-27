@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams, Slides } from 'ionic-angular';
 import { Service } from "../../providers/service";
 import { PostsPage } from "../wordpress/posts/posts";
 import { PromotionalPage } from "../wordpress/promotional/promotional";
+import { Html5Audio } from "../../providers/html5audio";
 
 @Component({
   selector: 'page-home',
@@ -21,8 +22,13 @@ export class HomePage {
   constructor(
       public navCtrl: NavController,
       public navParams: NavParams,
-      private service: Service
-  ) {}
+      private service: Service,
+      private player: Html5Audio,
+  ) {
+    {
+      this.player.plaY
+    }
+  }
 
   getCat(){
     this.service.getCategories()
@@ -51,6 +57,21 @@ export class HomePage {
     }, 500);
   }
 
+  ionViewWillEnter() {
+    this.play('http://198.24.156.115:9300/;');
+  }
+
+  play(url: string) {
+    this.player.play(url);
+  }
+
+  stop() {
+    this.player.stop();
+  }
+
+  pause(){
+    this.player.pause();
+  }
 
   loadPage(page){
     this.navCtrl.setRoot(page);
