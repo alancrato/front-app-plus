@@ -22,7 +22,7 @@ export class PromotionalPage implements OnInit {
     constructor(
         private navP: NavParams,
         private service: ServiceWp,
-        private navCtrl: NavController,
+        private navC: NavController,
         private loading: LoadingController,
         private toast: ToastController,
         private storage: Storage
@@ -30,7 +30,7 @@ export class PromotionalPage implements OnInit {
 
     ngOnInit(){
         this.category = this.navP.get('category');
-        this.hider = true;
+        this.hide = true;
         this.search = '';
         this.favoritePosts = [];
         this.storage.get('wp.favorite')
@@ -90,7 +90,7 @@ export class PromotionalPage implements OnInit {
     }
 
     loadPost(post) {
-        this.navCtrl.push(PostPage, {
+        this.navC.push(PostPage, {
             post: post
         });
     }
