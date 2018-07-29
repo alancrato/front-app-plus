@@ -15,9 +15,9 @@
     <ion-col col-12 text-center>
       <ion-slides pager>
         <ion-slide *ngFor="let slide of slides">
-            <div *ngIf="slide.page == 'HomePage'; then thenBlock else elseBlock"></div>
+            <div *ngIf="slide.page == 'HomePage' && !player.plaY; then thenBlock else elseBlock"></div>
             <ng-template #thenBlock>
-              <img [src]="slide.card_active" class="slide-image" (click)="loadPage(slide.page)"/>
+              <img [src]="slide.card_active" class="slide-image animated flip" (click)="loadPage(slide.page)"/>
             </ng-template>
             <ng-template #elseBlock>
               <div *ngIf="slide.stream == 'null'; then thenBlock else elseBlock"></div>
@@ -25,7 +25,9 @@
                   <img [src]="slide.card_inactive" class="slide-image" (click)="loadPushPage(slide.page)"/>
                 </ng-template>
               <ng-template #elseBlock>
+                <div *ngIf="player.plaY">
                   <img [src]="slide.card_inactive" class="slide-image" (click)="loadPage(slide.page)"/>
+                </div>
               </ng-template>
             </ng-template>
         </ion-slide>
@@ -34,7 +36,7 @@
   </ion-row>
   <ion-row class="player" text-center>
     <ion-col col-2 class="ic ic-face">
-      <img src="assets/imgs/ic_facebook.png"/>
+      <img src="assets/imgs/ic_facebook.png" (click)="getStream()"/>
     </ion-col>
     <ion-col col-2 class="ic">
       <img src="assets/imgs/ic_instagram.png"/>

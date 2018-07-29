@@ -18,6 +18,17 @@ export class HomePage {
   @ViewChild(Slides) sld: Slides;
 
   slides:any[];
+  streamApi:string;
+
+  getStream(){
+    for(let index of this.slides){
+      if(index.page == 'HomePage'){
+          let stream = index.stream;
+          console.log(stream);
+          this.streamApi = stream;
+      }
+    }
+  }
 
   constructor(
       public navCtrl: NavController,
@@ -58,6 +69,10 @@ export class HomePage {
   }
 
   ionViewWillEnter() {
+    setTimeout(() => {
+      let url = this.streamApi;
+      console.log(url);
+    }, 500);
     this.play('http://198.24.156.115:9300/;');
   }
 
