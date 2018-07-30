@@ -20,16 +20,6 @@ export class HomePage {
   slides:any[];
   streamApi:string;
 
-  getStream(){
-    for(let index of this.slides){
-      if(index.page == 'HomePage'){
-          let stream = index.stream;
-          console.log(stream);
-          this.streamApi = stream;
-      }
-    }
-  }
-
   constructor(
       public navCtrl: NavController,
       public navParams: NavParams,
@@ -38,6 +28,16 @@ export class HomePage {
   ) {
     {
       this.player.plaY
+    }
+  }
+
+  getStream(){
+    for(let index of this.slides){
+      if(index.page == 'HomePage'){
+        let stream = index.stream;
+        console.log(stream);
+        this.streamApi = stream;
+      }
     }
   }
 
@@ -53,6 +53,7 @@ export class HomePage {
   }
 
   ionViewDidLoad(){
+    //this.play('http://198.24.156.115:9300/;');
     setTimeout(() => {
       let index = this.sld.getPreviousIndex();
       console.log(index);
@@ -61,6 +62,7 @@ export class HomePage {
   }
 
   ionViewDidEnter(){
+    this.play('http://198.24.156.115:9300/;');
     setTimeout(() => {
       let index = this.sld.getPreviousIndex();
       console.log(index);
@@ -68,12 +70,12 @@ export class HomePage {
     }, 500);
   }
 
-  ionViewWillEnter() {
-    setTimeout(() => {
+  ionViewWillEnter(url) {
+    //this.play('http://198.24.156.115:9300/;');
+    /*setTimeout(() => {
       let url = this.streamApi;
       console.log(url);
-    }, 500);
-    this.play('http://198.24.156.115:9300/;');
+    }, 500);*/
   }
 
   play(url: string) {

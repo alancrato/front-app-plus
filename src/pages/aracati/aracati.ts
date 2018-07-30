@@ -48,7 +48,7 @@ export class AracatiPage {
     }, 500);
   }
 
-  ionViewWillEnter(){
+  ionViewWillEnter(url){
     this.pause();
     this.play('http://198.24.156.115:9304/;');
     setTimeout(() => {
