@@ -41,11 +41,11 @@ export class LoginPage {
   }
 
   affterLogin(){
-    this.navCtrl.setRoot('SinglePage');
+    this.navCtrl.setRoot('HomePage');
   }
 
   pushHome(){
-    this.navCtrl.setRoot('SinglePage');
+    this.navCtrl.setRoot('HomePage');
   }
 
 }

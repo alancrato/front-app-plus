@@ -2,6 +2,7 @@ import { Component, Injectable, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams, Slides } from 'ionic-angular';
 import { Service } from "../../providers/service";
 import { PostsPage } from "../wordpress/posts/posts";
+import { Html5Audio } from "../../providers/html5audio";
 
 @Component({
   selector: 'page-cariri',
@@ -20,8 +21,13 @@ export class CaririPage {
   constructor(
       public navCtrl: NavController,
       public navParams: NavParams,
-      private service: Service
-  ) {}
+      private service: Service,
+      private player: Html5Audio
+  ) {
+    {
+      this.player.plaY
+    }
+  }
 
   getCat(){
     this.service.getCategories()
@@ -43,6 +49,8 @@ export class CaririPage {
   }
 
   ionViewWillEnter(){
+    this.pause();
+    this.play('http://198.24.156.115:9318/;');
     setTimeout(() => {
       let index = this.sld.getPreviousIndex();
       console.log(index);
@@ -56,6 +64,18 @@ export class CaririPage {
       console.log(index);
       this.sld.slideTo(index);
     }, 500);
+  }
+
+  play(url: string) {
+    this.player.play(url);
+  }
+
+  stop() {
+    this.player.stop();
+  }
+
+  pause(){
+    this.player.pause();
   }
 
   loadPage(page){

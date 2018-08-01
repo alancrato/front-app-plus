@@ -1,6 +1,7 @@
 import { Component, Injectable, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams, Slides } from 'ionic-angular';
 import { Service} from "../../providers/service";
+import {Html5Audio} from "../../providers/html5audio";
 
 @Component({
   selector: 'page-sobral',
@@ -19,8 +20,13 @@ export class SobralPage {
   constructor(
       public navCtrl: NavController,
       public navParams: NavParams,
-      private service: Service
-  ) {}
+      private service: Service,
+      private player: Html5Audio
+  ) {
+    {
+      this.player.plaY
+    }
+  }
 
   getCat(){
     this.service.getCategories()
@@ -42,6 +48,8 @@ export class SobralPage {
   }
 
   ionViewWillEnter(){
+    this.pause();
+    this.play('http://198.24.156.115:9306/;');
     setTimeout(() => {
       let index = this.sld.getPreviousIndex();
       console.log(index);
@@ -55,6 +63,18 @@ export class SobralPage {
       console.log(index);
       this.sld.slideTo(index);
     }, 500);
+  }
+
+  play(url: string) {
+    this.player.play(url);
+  }
+
+  stop() {
+    this.player.stop();
+  }
+
+  pause(){
+    this.player.pause();
   }
 
   loadPage(page){
