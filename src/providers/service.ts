@@ -15,21 +15,21 @@ export class Service{
     {}
 
     getCategories(){
-        return this.http.get(ENV.API_URL + `/categories`)
+        return this.http.get(ENV.API_URL_DATA + `/data/categories`)
             .map(result => {
                return result.json();
             });
     }
 
     getStates(){
-        return this.http.get(ENV.API_URL + `/states`)
+        return this.http.get(ENV.API_URL_DATA + `/data/states`)
             .map(result => {
                 return result.json();
             });
     }
 
     getProgramations(){
-        return this.http.get(ENV.API_URL + `/promotions`)
+        return this.http.get(ENV.API_URL_DATA + `/data/promotions`)
             .map(result => {
                 return result.json();
             })
