@@ -27,6 +27,14 @@ export class LoginPage {
   login(){
     this.auth.login(this.user)
       .then(() => {
+          console.log('Login efetuado com sucesso');
+          let toast = this.toastCtrl.create({
+            message: 'Seja Bem Vindo(a) PlusFm!',
+            duration: 3000,
+            position: 'top',
+            cssClass: 'login-reverse'
+          });
+          toast.present();
         this.affterLogin();
       })
       .catch(() => {

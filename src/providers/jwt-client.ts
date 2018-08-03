@@ -6,7 +6,7 @@ import { Storage } from "@ionic/storage";
 import { AuthHttp, JwtHelper } from "angular2-jwt";
 import { ENV } from "../models/env";
 
-declare var ENV:ENV;
+declare let ENV:ENV;
 
 @Injectable()
 export class JwtClientProvider {

@@ -40,7 +40,7 @@ export class MyApp {
       { title: 'Programação', component: 'ProgrammingPage', icon: 'reorder' },
       { title: 'Favorites', component: Favorites, icon: 'bookmark' },
       { title: 'Login', component: 'LoginPage', icon: 'person' },
-      { title: 'Criar Conta', component: 'AccountPage', icon: 'person-add' }
+      { title: 'Criar Conta', component: 'UserRegisterPage', icon: 'person-add' }
     ];
   }
 

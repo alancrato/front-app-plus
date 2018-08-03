@@ -17,6 +17,7 @@ import { Service } from "../providers/service";
 import { PipeModule } from "./pipes/pipe.module";
 import { WpModule } from "../pages/wordpress/wp.module";
 import { Html5Audio } from "../providers/html5audio";
+import { UserResource } from "../providers/user.resource";
 
 declare let ENV:ENV;
 
@@ -47,6 +48,7 @@ declare let ENV:ENV;
     Redirector,
     Service,
     Html5Audio,
+    UserResource,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     {
       provide: AuthHttp,
