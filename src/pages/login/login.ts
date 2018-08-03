@@ -56,4 +56,8 @@ export class LoginPage {
     this.navCtrl.setRoot('HomePage');
   }
 
+  userRegister(){
+    this.navCtrl.setRoot('UserRegisterPage');
+  }
+
 }

@@ -39,8 +39,8 @@ export class MyApp {
       { title: 'Drops da Plus', component: PostsPage, icon: 'paper' },
       { title: 'Programação', component: 'ProgrammingPage', icon: 'reorder' },
       { title: 'Favorites', component: Favorites, icon: 'bookmark' },
-      { title: 'Login', component: 'LoginPage', icon: 'person' },
-      { title: 'Criar Conta', component: 'UserRegisterPage', icon: 'person-add' }
+      { title: 'Login', component: 'LoginPage', icon: 'log-in' },
+      //{ title: 'Criar Conta', component: 'UserRegisterPage', icon: 'person-add' }
     ];
   }
 
@@ -69,9 +69,9 @@ export class MyApp {
 
   logout(){
     this.auth.logout().then(() => {
-      this.nav.setRoot('LoginPage');
+      this.nav.setRoot('HomePage');
     }).catch(() => {
-      this.nav.setRoot('LoginPage');
+      this.nav.setRoot('HomePage');
     })
   }
 

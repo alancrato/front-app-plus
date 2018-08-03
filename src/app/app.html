@@ -15,6 +15,14 @@
     </ion-list>
   </ion-content>
 
+  <ion-footer>
+    <div>
+      <button  ion-button text-right large block clear (click)="logout()">
+        <ion-icon name="log-out">Sair</ion-icon>
+      </button>
+    </div>
+  </ion-footer>
+
 </ion-menu>
 
 <ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

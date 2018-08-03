@@ -5,7 +5,7 @@ import 'rxjs/add/operator/map';
 import { AuthHttp } from "angular2-jwt";
 import { Observable } from "rxjs";
 import { ENV } from "../models/env";
-import { JwtClientProvider } from '../providers/jwt-client';
+import { JwtClientProvider } from './jwt-client';
 
 declare let ENV:ENV;
 
@@ -23,15 +23,13 @@ export class UserResource {
   register(accessToken:string):Promise<string>{
     let headers = new Headers();
     headers.set('Authorization', `Bearer ${accessToken}`);
-    return this.http
-        .post(`${ENV.API_URL}/register`,{},new RequestOptions({headers}))
+    return this.http.post(`${ENV.API_URL}/register`,{},new RequestOptions({headers}))
         .toPromise()
         .then(response => response.json().token);
   }
 
-  create(user): Promise<string>{
-      return this.http
-          .post(`${ENV.API_URL}/register`, Object.assign(user,{type: 2}))
+  create(user): Promise<void>{
+      return this.http.post(`${ENV.API_URL}/register`, Object.assign(user,{type: 2}))
           .toPromise()
           .then(response => {
             let token = response.json().token;
@@ -40,8 +38,7 @@ export class UserResource {
   }
 
   updatePassword({password, password_confirmation}):Promise<Object>{
-    return this.authHttp
-        .patch(`${ENV.API_URL}/user/settings`, {password,password_confirmation})
+    return this.authHttp.patch(`${ENV.API_URL}/user/settings`, {password,password_confirmation})
         .toPromise()
         .then(response => response.json().user);
   }
