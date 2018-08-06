@@ -12,13 +12,24 @@
         <ion-icon [name]="p.icon" item-left></ion-icon>
         {{p.title}}
       </button>
+      <div *ngIf="user !== null; then thenBlock else elseBlock"></div>
+      <ng-template #thenBlock>
+        <button ion-item color="dark" (click)="loadSettings()">
+          <ion-icon name="log-in" iten-left> Conta</ion-icon>
+        </button>
+      </ng-template>
+      <ng-template #elseBlock>
+        <button ion-item color="dark" (click)="loginPage()">
+          <ion-icon name="log-in" iten-left> Login</ion-icon>
+        </button>
+      </ng-template>
     </ion-list>
   </ion-content>
 
   <ion-footer>
-    <div>
-      <button  ion-button text-right large block clear (click)="logout()">
-        <ion-icon name="log-out">Sair</ion-icon>
+    <div *ngIf="user !== null">
+      <button  ion-button text-center color="dark" (click)="logout()">
+        <ion-icon name="log-out"> Sair</ion-icon>
       </button>
     </div>
   </ion-footer>

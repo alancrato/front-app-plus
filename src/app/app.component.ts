@@ -38,9 +38,7 @@ export class MyApp {
       { title: 'Promoções', component: PromotionalPage, icon: 'calendar' },
       { title: 'Drops da Plus', component: PostsPage, icon: 'paper' },
       { title: 'Programação', component: 'ProgrammingPage', icon: 'reorder' },
-      { title: 'Favorites', component: Favorites, icon: 'bookmark' },
-      { title: 'Login', component: 'LoginPage', icon: 'log-in' },
-      //{ title: 'Criar Conta', component: 'UserRegisterPage', icon: 'person-add' }
+      { title: 'Favorites', component: Favorites, icon: 'bookmark' }
     ];
   }
 
@@ -70,9 +68,20 @@ export class MyApp {
   logout(){
     this.auth.logout().then(() => {
       this.nav.setRoot('HomePage');
+      this.menu.close();
     }).catch(() => {
       this.nav.setRoot('HomePage');
     })
+  }
+
+  loginPage(){
+    this.nav.setRoot('LoginPage');
+    this.menu.close();
+  }
+
+  loadSettings(){
+    this.nav.setRoot('MySettingsPage');
+    this.menu.close();
   }
 
 }

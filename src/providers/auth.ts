@@ -18,7 +18,7 @@ export class AuthProvider {
       public jwtClient: JwtClientProvider,
   ){
     this.user().then((user) => {
-      console.log(user);
+      //console.log(user);
     });
   }
 

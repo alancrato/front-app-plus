@@ -21,7 +21,7 @@ export class JwtClientProvider {
   ) {
     this.getToken();
     this.getPayload().then((payload) => {
-        console.log(payload);
+        //console.log(payload);
     });
   }
 

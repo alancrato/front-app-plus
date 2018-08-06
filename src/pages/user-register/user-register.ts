@@ -25,7 +25,7 @@ export class UserRegisterPage {
       public tostCtrl: ToastController,
       public userResource: UserResource
   ){
-      this.menuCtrl.enable(false);
+      this.menuCtrl.enable(true);
   }
 
   register() {
@@ -34,8 +34,8 @@ export class UserRegisterPage {
           this.menuCtrl.enable(true);
           console.log('Usuário criado com sucesso');
           let toast = this.tostCtrl.create({
-            message: 'Usuário criado com sucesso, Seja Bem vindo ao Eita!',
-            duration: 3000,
+            message: 'Usuário criado com sucesso, Seja Bem vindo a Plus Fm!',
+            duration: 5000,
             position: 'top',
             cssClass: 'login-reverse'
           });
