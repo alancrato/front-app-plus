@@ -36,7 +36,7 @@ export class UserRegisterPage {
           let toast = this.tostCtrl.create({
             message: 'Usuário criado com sucesso, Seja Bem vindo a Plus Fm!',
             duration: 5000,
-            position: 'top',
+            position: 'button',
             cssClass: 'login-reverse'
           });
           toast.present();

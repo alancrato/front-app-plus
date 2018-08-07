@@ -45,6 +45,8 @@ export class CaririPage {
       let index = this.sld.getPreviousIndex();
       console.log(index);
       this.sld.slideTo(index +2);
+      let newIndex = this.sld.length();
+      console.log(newIndex);
     }, 500);
   }
 

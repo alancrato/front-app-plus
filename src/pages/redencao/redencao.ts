@@ -43,7 +43,7 @@ export class RedencaoPage {
     setTimeout(() => {
       let index = this.sld.getPreviousIndex();
       console.log(index);
-      this.sld.slideTo(index +11);
+      this.sld.slideTo(index +9);
     }, 500);
   }
 

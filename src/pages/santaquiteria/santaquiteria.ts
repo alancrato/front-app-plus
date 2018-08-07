@@ -43,7 +43,7 @@ export class SantaquiteriaPage {
     setTimeout(() => {
       let index = this.sld.getPreviousIndex();
       console.log(index);
-      this.sld.slideTo(index +9);
+      this.sld.slideTo(index +10);
     }, 500);
   }
 

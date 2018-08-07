@@ -67,9 +67,10 @@ export class MyApp {
 
   logout(){
     this.auth.logout().then(() => {
-      this.nav.setRoot('HomePage');
       this.menu.close();
+      this.nav.setRoot('HomePage');
     }).catch(() => {
+      this.menu.close();
       this.nav.setRoot('HomePage');
     })
   }

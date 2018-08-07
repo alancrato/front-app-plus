@@ -43,7 +43,7 @@ export class SobralPage {
     setTimeout(() => {
       let index = this.sld.getPreviousIndex();
       console.log(index);
-      this.sld.slideTo(index +10);
+      this.sld.slideTo(index +11);
     }, 500);
   }
 

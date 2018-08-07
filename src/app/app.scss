@@ -104,6 +104,51 @@ ion-app{
     border-bottom: 0 solid transparent;
   }
 
+
+  /*
+  Cards
+   */
+  .swiper-slide-next{
+    margin-right: 10%;
+    margin-left: -10%;
+    width: 280px !important;
+    margin-top: 2%;
+  }
+
+  .swiper-slide-prev{
+    margin-left: 16%;
+    margin-right: -10%;
+    width: 280px !important;
+    margin-top: 2%;
+  }
+
+  .swiper-slide-active{
+    //width: 290px;
+  }
+
+  ion-slides {
+    display: block;
+    width: 100%;
+    height: inherit;
+    margin-top: 5%;
+  }
+
+  .slide-zoom {
+    height: 100%;
+  }
+
+  .slide-image {
+    max-width: 100%;
+    margin: 0;
+  }
+
+  .slide-zoom {
+    text-align: center;
+    display: block;
+    width: auto;
+    height: 298px;
+  }
+
 }
 
 .toast-login-error{

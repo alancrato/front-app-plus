@@ -13,7 +13,7 @@
 <ion-content>
   <ion-row>
     <ion-col col-12 text-center>
-      <ion-slides pager>
+      <ion-slides>
         <ion-slide *ngFor="let slide of slides">
           <div *ngIf="slide.page == 'RedencaoPage' && !player.plaY; then thenBlock else elseBlock"></div>
           <ng-template #thenBlock>
